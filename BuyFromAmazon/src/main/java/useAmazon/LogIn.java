@@ -20,17 +20,20 @@ public class LogIn extends CommonAPI{
     @FindBy (how = How.XPATH, using = "//input[@type='password'][@name='password']")
     public static WebElement enterPassword;
     @FindBy (how = How.XPATH, using = "//input[@type='submit'][@id='signInSubmit']")
-    public static WebElement clickOnSignin;
+    public static WebElement clickSignin;
 
     public static WebElement getMouseToLogIn() { return mouseToLogIn; }
+
+    public static WebElement getClickSignin() {return clickSignin;}
+
     public void clickonLogin() throws InterruptedException {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));
-               mouseToLogIn.click();
+         mouseToLogIn.click();
         clickOnSignIn.click();
         enterEmail.sendKeys("mb.jacque@gmail.com ");
         enterPassword.sendKeys("mehmet1115");
-        clickOnSignIn.click();
+        clickSignin.click();
         Thread.sleep(3000);
          }
 }
